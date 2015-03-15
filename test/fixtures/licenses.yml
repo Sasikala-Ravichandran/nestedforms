@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number: MyString
+  state: MyString
+  driver_id: 
+
+two:
+  number: MyString
+  state: MyString
+  driver_id: 

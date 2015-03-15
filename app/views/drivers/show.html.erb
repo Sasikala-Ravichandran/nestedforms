@@ -1,0 +1,6 @@
+<%= @driver.fname%><%= @driver.lname%>
+<% if @driver.license.present? %>
+<%= @driver.license.number %><%= @driver.license.state %>
+<% end %>
+<%= link_to "Edit", edit_driver_path(@driver) %>
+<%= link_to "Destroy" %>
