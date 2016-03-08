@@ -1,14 +1,15 @@
 <%= form_for @driver do |f| %>
-
+	
 	<div>
 		<%= f.label :firstname, 'First Name' %>
 		<%= f.text_field :fname%><br/>
 	</div>
+	
 	<div>
 		<%= f.label :lname, 'Last Name' %>
 		<%= f.text_field :lname %><br/>
 	</div>
-	 
+
 	<%= f.fields_for :license do |lb| %>
 		<div>
 			<%= lb.label :number, 'Drivers License' %>
@@ -21,6 +22,5 @@
 	<% end %>
 
 	<%= f.submit "Creating Driver "%>
-
 
 <% end %>

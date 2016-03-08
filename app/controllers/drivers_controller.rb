@@ -1,4 +1,5 @@
 class DriversController < ApplicationController
+
   def index
     @drivers = Driver.all
   end
@@ -6,21 +7,21 @@ class DriversController < ApplicationController
   def show
     @driver = Driver.find(params[:id])
   end
+
   def new
-  	@driver = Driver.new
+    @driver = Driver.new
     @driver.build_license
   end
 
   def create
-  	#render text: params.hash
-  	@driver = Driver.new(driver_params)
-  	if @driver.save
-  		redirect_to @driver
-  	else
-        render 'new'
-  	end
+    @driver = Driver.new(driver_params)
+    if @driver.save
+      redirect_to @driver
+    else
+      render 'new'
+    end
   end
-  
+
   def edit
     @driver = Driver.find(params[:id])
   end
@@ -31,13 +32,13 @@ class DriversController < ApplicationController
     if @driver.save
       redirect_to @driver
     else
-       render 'edit'
+      render 'edit'
     end
+  end
 
-  end
-  
   private
-  def driver_params
-  	params.require(:driver).permit(:fname, :lname, license_attributes: [:number, :state])
-  end
+
+    def driver_params
+      params.require(:driver).permit(:fname, :lname, license_attributes: [:number, :state])
+    end
 end
